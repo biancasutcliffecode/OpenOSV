@@ -141,7 +141,7 @@ jobs:
       - name: Test
         run: |
           ctest --preset ci-macos --output-on-failure \
-            --exclude-regex '^(osvtool decode-replay replays a logged request order and holds the frames of an undecodable run|the descriptors are exactly the golden snapshot|vegas: VEGAS: the descriptors are exactly the VEGAS golden snapshot)$'
+            --exclude-regex 'osvtool decode-replay replays a logged request order|descriptors are exactly.*golden snapshot'
 
       - name: Backend report
         run: build/ci-macos/bin/osvtool --version
